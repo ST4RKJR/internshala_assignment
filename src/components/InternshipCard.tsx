@@ -8,7 +8,6 @@ interface InternshipCardProps {
 export default function InternshipCard({ internship }: InternshipCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col gap-4 hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] transition-shadow duration-300 cursor-pointer">
-      {/* Header Section */}
       <div className="flex justify-between items-start">
         <div className="space-y-1">
           <h3 className="text-[18px] font-bold text-[#333333] tracking-tight">
@@ -43,7 +42,6 @@ export default function InternshipCard({ internship }: InternshipCardProps) {
         </div>
       </div>
 
-      {/* Info Row (Location, Stipend, Duration) */}
       <div className="flex flex-wrap items-center gap-6 mt-1 text-[14px] text-gray-700">
         <div className="flex items-center gap-1.5">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +64,6 @@ export default function InternshipCard({ internship }: InternshipCardProps) {
         </div>
       </div>
 
-      {/* Role & Responsibilities Mock */}
       <div className="flex items-start gap-1.5 mt-1 text-[13.5px] text-gray-700">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -74,7 +71,6 @@ export default function InternshipCard({ internship }: InternshipCardProps) {
         <span className="truncate">Role & responsibilities Assist in processing vendor invoices and payment requests Verify invoices...</span>
       </div>
 
-      {/* Skills Mock */}
       <div className="flex items-center flex-wrap gap-2 text-[13px] text-gray-500 font-medium">
         <span>Accounting</span>
         <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
@@ -87,7 +83,6 @@ export default function InternshipCard({ internship }: InternshipCardProps) {
         <span>Report Generation</span>
       </div>
 
-      {/* Footer Tags */}
       <div className="flex items-center gap-3 mt-1 pt-1">
         <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#e6f4ea] text-[#137333] rounded-full text-[12.5px] font-medium">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-[14px] w-[14px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">

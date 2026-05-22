@@ -2,7 +2,13 @@ import SearchLayout from '@/components/SearchLayout';
 import { Internship, APIResponse } from '@/types';
 
 async function getInternships(): Promise<Internship[]> {
-  const res = await fetch('https://internshala.com/hiring/search', {
+  const apiUrl = process.env.API_URL || 'https://internshala.com/hiring/search';
+  const apiKey = process.env.API_KEY || '';
+
+  const res = await fetch(apiUrl, {
+    headers: {
+      ...(apiKey ? { 'Authorization': `Bearer ${apiKey}` } : {})
+    },
     next: { revalidate: 3600 },
   });
 
@@ -12,7 +18,6 @@ async function getInternships(): Promise<Internship[]> {
 
   const data: APIResponse = await res.json();
   
-  // Extract the internship meta objects into an array
   const internships = data.internship_ids.map(id => data.internships_meta[id]).filter(Boolean);
   
   return internships;

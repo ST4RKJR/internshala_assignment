@@ -64,7 +64,6 @@ export default function FilterSidebar({
       </div>
 
       <div className="p-5 space-y-5">
-        {/* Profile Filter */}
         <div className="space-y-1.5 relative">
           <label className="text-[13px] font-medium text-gray-700">Profile</label>
           <div 
@@ -126,7 +125,6 @@ export default function FilterSidebar({
           )}
         </div>
 
-        {/* Location Filter */}
         <div className="space-y-1.5 relative">
           <label className="text-[13px] font-medium text-gray-700">Location</label>
           <div 
@@ -188,7 +186,6 @@ export default function FilterSidebar({
           )}
         </div>
 
-        {/* Checkboxes */}
         <div className="space-y-3 pt-1 text-[14px] text-gray-700">
           <label className="flex items-center gap-2 cursor-pointer">
             <input 
@@ -210,7 +207,6 @@ export default function FilterSidebar({
           </label>
         </div>
 
-        {/* Stipend Filter */}
         <div className="space-y-3 pt-2">
           <label className="text-[13px] font-medium text-gray-700">Desired minimum monthly stipend (₹)</label>
           <div className="relative pt-2">
@@ -248,7 +244,6 @@ export default function FilterSidebar({
           <button 
             onClick={() => {
               if (showMoreFilters) {
-                // Reset dropdown states when hiding the section
                 setIsDatePickerOpen(false);
                 setIsDurationOpen(false);
               }

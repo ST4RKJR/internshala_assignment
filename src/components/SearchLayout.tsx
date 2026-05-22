@@ -22,7 +22,6 @@ export default function SearchLayout({ initialInternships }: SearchLayoutProps) 
 
   const filteredInternships = useMemo(() => {
     return initialInternships.filter((internship) => {
-      // Profile match (case insensitive, OR logic)
       if (profileFilters.length > 0) {
         const matchesProfile = profileFilters.some(pf => internship.profile_name.toLowerCase().includes(pf.toLowerCase()));
         if (!matchesProfile) {
@@ -30,7 +29,6 @@ export default function SearchLayout({ initialInternships }: SearchLayoutProps) 
         }
       }
       
-      // Location match (OR logic)
       if (locationFilters.length > 0) {
         const locations = internship.location_names.map(l => l.toLowerCase());
         const isMatch = locationFilters.some(lf => locations.some(loc => loc.includes(lf.toLowerCase())));
@@ -39,24 +37,20 @@ export default function SearchLayout({ initialInternships }: SearchLayoutProps) 
         }
       }
 
-      // WFH
       if (isWfh && !internship.work_from_home) {
         return false;
       }
 
-      // Part-time
       if (isPartTime && !internship.part_time) {
         return false;
       }
 
-      // Stipend
       if (stipendFilter > 0) {
         if (!internship.stipend?.salaryValue1 || internship.stipend.salaryValue1 < stipendFilter) {
           return false;
         }
       }
 
-      // Duration (Max duration filter)
       if (durationFilter) {
         const maxDuration = parseInt(durationFilter, 10);
         const durationMatch = internship.duration.match(/(\d+)/);
@@ -68,7 +62,6 @@ export default function SearchLayout({ initialInternships }: SearchLayoutProps) 
         }
       }
 
-      // Keyword Search
       if (keywordFilter) {
         const keyword = keywordFilter.toLowerCase();
         const matchesKeyword = 
